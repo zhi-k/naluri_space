@@ -10,6 +10,9 @@ const app: Application = express();
 
 const port = parseInt(config.port);
 
+app.set('view engine', 'ejs');
+app.disable('x-powered-by');
+
 app.use(helmet());
 app.use(morgan("combined"));
 
