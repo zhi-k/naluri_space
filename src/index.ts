@@ -38,8 +38,15 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
 app.listen(port, () => console.log(`[${config.env}] Server has started on port ${port}`));
 
-// Exception handler
+process.on("uncaughtException", function uncaughtException(exception) {
+	console.error(exception);
+	process.exit(1);
+});
 
+process.on("unhandledRejection", function unhandledRejection(warning) {
+	console.error(warning);
+	process.exit(1);
+});
 
 async function main() {
 	while (true) {
