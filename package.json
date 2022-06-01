@@ -5,7 +5,7 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "tsnd --cls --respawn src/index.ts",
+    "dev": "tsnd --require dotenv/config --cls --respawn src/index.ts",
     "test": "jest",
     "lint": "eslint . --ext .ts",
     "migrate:make": "knex migrate:make",
