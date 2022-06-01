@@ -6,7 +6,7 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "tsnd --require dotenv/config --cls --respawn src/index.ts",
-    "test": "jest",
+    "test": "jest --maxWorkers=1",
     "lint": "eslint . --ext .ts",
     "migrate:make": "knex migrate:make",
     "migrate:latest": "knex migrate:latest",
