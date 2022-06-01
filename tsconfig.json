@@ -9,7 +9,11 @@
     "esModuleInterop": true,
     /* Advanced Options */
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": [
+      "src/types/*.d.ts",
+      "node_modules/@types"
+    ]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
