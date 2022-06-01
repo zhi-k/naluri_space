@@ -13,14 +13,15 @@ const circumferenceCacheStore = new CacheService({
 
 export default {
 
-	getSun: async function(_: Request, res: Response) {
+	getSun: async function(_: Request, res: Response): Promise<void> {
 		const row = await piCalculationsModel.getLatestRow();
 
 		if (!row) {
-			return res.json({
+			 res.json({
 				pi: "0",
 				circumference: "0",
 			});
+			return
 		}
 
 		let sunCircumference = circumferenceCacheStore.get(row.id);
@@ -31,7 +32,7 @@ export default {
 			circumferenceCacheStore.set(row.id, sunCircumference);
 		}
 
-		return res.json({
+		res.json({
 			pi: row.calculated_value,
 			circumference: sunCircumference,
 		});
