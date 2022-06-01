@@ -17,10 +17,11 @@ export default {
 		const row = await piCalculationsModel.getLatestRow();
 
 		if (!row) {
-			 res.json({
-				pi: "0",
-				circumference: "0",
-			});
+			 res.render("sun", {
+				 pi: "0",
+				 circumference: "0",
+				 elapsed_time: "0"
+			 })
 			return
 		}
 
@@ -32,9 +33,10 @@ export default {
 			circumferenceCacheStore.set(row.id, sunCircumference);
 		}
 
-		res.json({
+		res.render("sun", {
 			pi: row.calculated_value,
 			circumference: sunCircumference,
+			elapsed_time: row.elapsed_time,
 		});
 	},
 };

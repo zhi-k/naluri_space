@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/header'); %>
+</head>
+
+<body>
+    <main class="container mx-auto my-2 overflow-x-hidden">
+        <h1 class="text-4xl font-bold">The Sun's Circumference</h1>
+
+        <br>
+        <span class="my-2">Time taken to calculate Pi: <%= elapsed_time %> milliseconds</span>
+        <br>
+
+        <br>
+        <span class="font-bold">Pi Value:</span>
+        <p class="break-words"><%= pi ?? 0 ;%></p>
+
+        <br>
+        <span class="font-bold">Circumference of the Sun:</span>
+        <p class="break-words"><%= circumference ?? 0 ;%> KM</p>
+    </main>
+</body>
+
+<%- include('../partials/footer'); %>
+</html>
