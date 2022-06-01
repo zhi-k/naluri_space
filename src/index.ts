@@ -12,7 +12,7 @@ const port = parseInt(config.port);
 app.use(helmet());
 app.use(morgan('combined'));
 
-app.use(routes);
+app.use("/", routes);
 
 app.get("/health", (_, res) => res.sendStatus(200));
 
