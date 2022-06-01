@@ -1,0 +1,12 @@
+.idea
+node_modules
+.env
+dist
+
+coverage
+
+*.tsbuildinfo
+
+.pnpm-debug.log*
+logs
+*.log
