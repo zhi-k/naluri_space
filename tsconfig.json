@@ -2,7 +2,7 @@
   "extends": "@tsconfig/node16-strictest/tsconfig.json",
   "compilerOptions": {
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": ".",
     /* Module Resolution Options */
     "moduleResolution": "node",
     "baseUrl": "./src",
@@ -15,6 +15,6 @@
       "node_modules/@types"
     ]
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "knexfile.ts"],
   "exclude": ["node_modules"]
 }
