@@ -8,7 +8,7 @@ import CacheService from "../../services/cache";
 
 const piCalculationsModel = new PiCalculations(db);
 const circumferenceCacheStore = new CacheService({
-	ttl: 120,
+	ttl: 150,
 })
 
 export default {
@@ -18,10 +18,14 @@ export default {
 
 		if (!row) {
 			 res.json({
-				 pi: "0",
-				 circumference: "0",
-				 elapsed_time: "0",
-				 decimal_points: 0,
+				 data:{
+					 pi: "0",
+					 circumference: "0",
+					 elapsed_time: "0",
+					 decimal_points: 0,
+				 },
+				 success: true,
+				 message: "Success",
 			 })
 			return
 		}
@@ -35,10 +39,14 @@ export default {
 		}
 
 		res.json({
-			pi: row.calculated_value,
-			circumference: sunCircumference,
-			elapsed_time: row.elapsed_time,
-			decimal_points: row.id,
+			success: true,
+			message: "Success",
+			data: {
+				pi: row.calculated_value,
+				circumference: sunCircumference,
+				elapsed_time: row.elapsed_time,
+				decimal_points: row.id,
+			}
 		});
 	},
 };

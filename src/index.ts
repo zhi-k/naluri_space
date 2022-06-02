@@ -25,7 +25,8 @@ app.get("/health", (_, res) => res.sendStatus(200));
 
 app.use("*", (_, res) => {
 	return res.status(404).json({
-		error: "Page Not Found",
+		message: "Page Not Found",
+		success: false
 	});
 });
 
@@ -36,7 +37,8 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 	console.error(err);
 
 	return res.json({
-		error: "Something went wrong",
+		message: "Something went wrong",
+		success: false,
 		...(config.env !== "production" && { debug: err }),
 	});
 });
