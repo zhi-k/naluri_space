@@ -1,10 +1,13 @@
 import { Router } from "express";
 import expressAsyncHandler from "express-async-handler";
 
-import Circumference from "./controllers/circumference_controller";
+import Circumference from "./controllers/v1/circumference_controller";
 
 const router = Router();
+const vOneRouter = Router();
 
-router.get("/sun", expressAsyncHandler(Circumference.getSun));
+router.use("/v1", vOneRouter);
+
+vOneRouter.get("/sun", expressAsyncHandler(Circumference.getSun));
 
 export default router;

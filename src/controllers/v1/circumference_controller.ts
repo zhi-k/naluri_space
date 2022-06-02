@@ -1,10 +1,10 @@
 import type { Request, Response } from "express";
 
-import db from "../db";
-import PiCalculations from "../models/piCalculations";
-import { SunCircumference } from "../lib/circumference";
-import Pi from "../lib/pi";
-import CacheService from "../services/cache";
+import db from "../../db";
+import PiCalculations from "../../models/piCalculations";
+import { SunCircumference } from "../../lib/circumference";
+import Pi from "../../lib/pi";
+import CacheService from "../../services/cache";
 
 const piCalculationsModel = new PiCalculations(db);
 const circumferenceCacheStore = new CacheService({
