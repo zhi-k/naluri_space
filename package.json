@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "tsnd --require dotenv/config --cls --respawn src/index.ts",
     "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node build/index.js",
+    "start": "npm run build && node -r dotenv/config build/index.js",
     "test": "jest --maxWorkers=1",
     "lint": "eslint . --ext .ts",
     "migrate:make": "knex migrate:make",
