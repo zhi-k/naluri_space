@@ -1,6 +1,7 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
+import cors from 'cors';
 
 import { config } from "./config";
 import routes from "./routes";
@@ -16,6 +17,7 @@ app.use(helmet({
 	contentSecurityPolicy: false
 }));
 app.use(morgan("combined"));
+app.use(cors());
 
 app.use("/api", routes);
 
