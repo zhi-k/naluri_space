@@ -1,7 +1,6 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import helmet from "helmet";
 import morgan from "morgan";
-import path from 'path';
 
 import { config } from "./config";
 import routes from "./routes";
@@ -11,8 +10,6 @@ const app: Application = express();
 
 const port = parseInt(config.port);
 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../views/pages'))
 app.disable('x-powered-by');
 
 app.use(helmet({
