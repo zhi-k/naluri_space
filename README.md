@@ -1,5 +1,10 @@
 # Naluri Space
 
+[![Unit Tests & Migrations](https://github.com/zhi-k/naluri_space/actions/workflows/run_tests.yml/badge.svg)](https://github.com/zhi-k/naluri_space/actions/workflows/run_tests.yml)
+
+### Production Url
+`https://naluri-space-server.herokuapp.com/` 
+
 ## To start the project, run
 ```bash
 pnpm install
