@@ -1,1 +1,1 @@
-web: node -r dotenv/config build/index.js
+web: npm start
