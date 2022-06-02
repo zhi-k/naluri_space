@@ -18,6 +18,9 @@ const base: Knex.Config = {
 		host: process.env["PG_HOST"] as string,
 		user: process.env["PG_USER"] as string,
 		password: process.env["PG_PASSWORD"] as string,
+		ssl: {
+			rejectUnauthorized: false
+		}
 	},
 };
 
